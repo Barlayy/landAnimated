@@ -1,0 +1,362 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+}
+
+.scene{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#a6d8ff, #fff, #fff);
+    overflow: hidden;
+    z-index: 1;
+
+}
+.dark .scene{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#111425,#3751e0);
+}   
+.scene i{
+    display:none;
+}
+.dark .scene i{
+    display: inline;
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    animation: animate linear infinite;
+    z-index: -2;
+}
+
+@keyframes animate{
+    0%{
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    10%, 90%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+.sol{
+    position: absolute;
+    top: 20%;
+    left: 70%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 50px #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    
+}
+    
+.dark .sol{
+    width: 70px;
+    height: 70px;
+    left: 60%;
+    top: 35%;
+    background: url(img/moontexture.jpeg);
+    background-repeat: repeat-x;
+    box-shadow:inset 0 0 10px rgb(255, 255, 255), 0 0 50px rgb(38, 67, 214);
+    animation: animateLua 200s linear infinite;
+    z-index: 1000;
+}
+
+@keyframes animateLua{
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: 512px 0;
+    }
+}
+
+
+.bg {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    background: url(img/26954415_nature_landscape_bd_02.png);
+    background-size: cover;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    background-attachment: fixed;
+    overflow: hidden;
+    transition: 0.3s;
+
+}
+
+.bg.dark {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    background: url(img/Noite.png);
+    background-size: cover;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    background-attachment: fixed;
+    overflow: hidden;    
+}
+.layer1, .sol .layer2 {
+    display: block;
+}
+
+.dark .layer1, .dark .layer2 {
+    display: block;
+}
+
+
+.layer1{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    background: url(img/montanhalaftdia.png);
+    background-size: cover;
+    background-position-y: bottom;    
+    background-repeat: no-repeat;  
+    pointer-events: none;
+    background-attachment: fixed;
+    transition: 0.3s;
+
+}
+.dark .layer1{  
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    background: url(img/montanhaleft.png);
+    background-size: cover;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    background-attachment: fixed;
+
+
+
+}
+
+.layer2{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(img/montanrightdia.png);
+    background-size: cover;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    background-attachment: fixed;
+    transition: 0.3s;
+
+}
+
+.dark .layer2{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    background: url(img/montanharight.png);
+    background-size: cover;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    background-attachment: fixed;
+}
+
+.fogueira {
+    display: none;
+    
+
+}
+
+.fogo{
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    width: 20%;
+    height: 2%;
+    left: 135px;
+    border-radius: 50%;
+    box-shadow: 0 0 100px 30px rgb(255, 102, 0);
+    filter: blur(20px);
+    background: radial-gradient(circle at 50% 50%, #ffac4094, transparent);
+    animation: animacao-fogo 1s ease-in-out infinite alternate;
+}
+.dark .fogueira{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/campfire.gif);
+    background-position-y: bottom;
+    background-size: cover;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    bottom: 0%;
+}
+.dark .fogo {
+    display: inline-block;
+}
+  
+  @keyframes animacao-fogo {
+    0% {
+      box-shadow: 0 0 20px #ffac403d;
+    }
+    50% {
+      box-shadow: 0 0 50px #ffac406c, 0 0 40px #ffac401c, 0 0 30px #ffac4042;
+    }
+    100% {
+      box-shadow: 0 0 20px #ffac404b;
+    }
+  }
+.cloud1{
+    position: absolute;
+    background-image: url(img/cloud1.png);
+    background-repeat: no-repeat;
+    background-size: 30%;
+    top: 15%;
+    width: 30%;
+    height: 30%;
+    max-width: 600px;
+    z-index: 1000;
+    animation: animateCloud 50s linear infinite;
+    animation-delay: -50s;
+    pointer-events: none;
+
+
+}
+.cloud2{
+    position: absolute;
+    background-image: url(img/cloud2.png);
+    background-repeat: no-repeat;
+    background-size: 30%;
+    top: 10%;
+    width: 30%;
+    height: 30%;
+    z-index: 1000;
+    animation: animateCloud 80s linear infinite;
+    animation-delay: -20s;
+    pointer-events: none;
+
+
+}
+.cloud3{
+    position: absolute;
+    background-image: url(img/cloud3.png);
+    background-repeat: no-repeat;
+    background-size: 20%;
+    top: 5%;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    animation: animateCloud 40s linear infinite;
+    animation-delay: -30s;
+    pointer-events: none;
+
+}
+.cloud4{
+    position: absolute;
+    background-image: url(img/cloud1.png);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    top: 1%;
+    width: 30%;
+    height: 30%;
+    max-width: 600px;
+    z-index: 1000;
+    animation: animateCloud 130s linear infinite;
+    animation-delay: -50s;
+    pointer-events: none;
+
+
+}
+.cloud5{
+    position: absolute;
+    background-image: url(img/cloud2.png);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    top: 10%;
+    width: 30%;
+    height: 30%;
+    z-index: 1000;
+    animation: animateCloud 75s linear infinite;
+    animation-delay: -20s;
+    pointer-events: none;
+
+
+}
+.cloud6{
+    position: absolute;
+    background-image: url(img/cloud3.png);
+    background-repeat: no-repeat;
+    background-size: 20%;
+    top: 5%;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    animation: animateCloud 40s linear infinite;
+    animation-delay: -30s;
+    pointer-events: none;
+
+}
+
+
+@keyframes animateCloud{
+    0%{
+        transform: translateX(-100%) scale(1);
+    }
+    100%{
+        transform: translateX(400%) scale(1.5);
+    }
+}
+
+.l{
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+}
+@media screen and (max-width: 1080px) {
+    .bg{
+        background-size: contain;
+    }
+    .bg.dark{
+        background-size: contain;
+    }
+    .layer1{
+        background-size: contain;
+
+    }
+    .layer2{
+        background-size: contain;
+
+    }
+    .dark .layer1{
+        background-size: contain;
+    }
+    .dark .layer2{
+        background-size: contain;
+
+    }
+    .dark .fogueira{
+        background-size: contain;
+        bottom: 0px;
+    }
+}
