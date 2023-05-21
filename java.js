@@ -32,3 +32,4 @@ sol.onclick = function() {
         i++
     }
  }
+stars();
